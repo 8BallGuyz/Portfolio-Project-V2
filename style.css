@@ -1,0 +1,204 @@
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.col-md-6{
+    width: 100%;
+    margin-left : 25%;
+}
+
+.col-md-6 h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.main {
+    background-image: url('images/background\ img.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* Stretch to fill entire screen */
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.main-content {
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.text1 h1{
+    font-size : 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-caption.below-caption {
+    position: static;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+    opacity: 0.5;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: auto;
+    height: auto;
+}
+
+.reserver-btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.form-control#votre-message {
+    width: 100%;
+}
+
+.green-text {
+    color: #48605C;
+    text-shadow: 
+        -0.5px -0.5px 0 black,  
+         0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black,
+         0.5px 0.5px 0 black;
+}
+
+header {
+    background-color: #48605C;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.header-button {
+    color: white !important;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-button:hover {
+    color: #f0f0f0 !important;
+}
+
+.footer {
+    background-color: #48605C;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer h5 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer-reserve-btn {
+    background-color: white;
+    color: #48605C;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-reserve-btn:hover {
+    background-color: #f0f0f0;
+    color: #48605C;
+}
+
+.about-me-images {
+    position: relative;
+    width: 50%;
+    height: 80vh;
+    margin-left: -50px; /* Push the entire container more to the left */
+}
+
+.about-me-images .image-container {
+    position: absolute;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border: 3px solid white;
+    background-color: white;
+    padding: 5px;
+}
+
+.about-me-images .image-container:hover {
+    z-index: 10;
+    transform: scale(1.05) rotate(0deg) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.about-me-images img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url('fonts/lemon_milk/LEMONMILK-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.leoncarter-text {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 5rem; /* Very large text */
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.aboutme-text {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

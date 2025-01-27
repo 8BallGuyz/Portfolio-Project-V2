@@ -1,0 +1,137 @@
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.col-md-6{
+    width: 100%;
+    margin-left : 25%;
+}
+
+.col-md-6 h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.main {
+    background-color: rgb(255, 217, 167);
+}
+
+.text1 h1{
+    font-size : 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-caption.below-caption {
+    position: static;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+    opacity: 0.5;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: auto;
+    height: auto;
+}
+
+.reserver-btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.form-control#votre-message {
+    width: 100%;
+}
+
+.green-text {
+    color: #48605C;
+    text-shadow: 
+        -0.5px -0.5px 0 black,  
+         0.5px -0.5px 0 black,
+        -0.5px 0.5px 0 black,
+         0.5px 0.5px 0 black;
+}
+
+header {
+    background-color: #48605C;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+.header-button {
+    color: white !important;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-button:hover {
+    color: #f0f0f0 !important;
+}
+
+.footer {
+    background-color: #48605C;
+    color: white;
+    padding: 50px 0;
+}
+
+.footer h5 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer-reserve-btn {
+    background-color: white;
+    color: #48605C;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-reserve-btn:hover {
+    background-color: #f0f0f0;
+    color: #48605C;
+}
