@@ -6,8 +6,38 @@ body, html {
     box-sizing: border-box;
 }
 
+/* LEON CARTER TITLE */
+.leoncarter-text {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 5rem; /* Very large text */
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* LEON CARTER TITLE */
+.aboutme-text {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* LEON CARTER TITLE */
+.about-me-paragraph {
+    font-family: 'Lemon Milk', cursive;
+    font-size: 24px;
+    align-items: center;
+    transform : translate(60%, -450px);
+    color : white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;   
 }
 
 .col-md-6{
@@ -34,12 +64,6 @@ body, html {
     min-height: 100vh;
     width: 100%;
     padding: 20px;
-}
-
-.text1 h1{
-    font-size : 30px;
-    align-items: center;
-    text-align: center;
 }
 
 .carousel-caption.below-caption {
@@ -84,13 +108,14 @@ body, html {
     width: 100%;
 }
 
-.green-text {
-    color: #48605C;
-    text-shadow: 
-        -0.5px -0.5px 0 black,  
-         0.5px -0.5px 0 black,
-        -0.5px 0.5px 0 black,
-         0.5px 0.5px 0 black;
+.projetprincipal-text {
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 3rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
 }
 
 header {
@@ -178,27 +203,13 @@ header {
     transition: transform 0.3s ease;
 }
 
+body {
+  top: 0 !important;
+}
+
 @font-face {
     font-family: 'Lemon Milk';
     src: url('fonts/lemon_milk/LEMONMILK-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-}
-
-.leoncarter-text {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 5rem; /* Very large text */
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    line-height: 1;
-    margin-bottom: 20px;
-}
-
-.aboutme-text {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 3rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
