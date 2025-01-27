@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     max-width: 100%;
     overflow-x: hidden;
     margin: 0;
@@ -9,7 +10,8 @@ body, html {
 /* LEON CARTER TITLE */
 .leoncarter-text {
     font-family: 'Lemon Milk', sans-serif;
-    font-size: 5rem; /* Very large text */
+    font-size: 5rem;
+    /* Very large text */
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -31,18 +33,18 @@ body, html {
     font-family: 'Lemon Milk', cursive;
     font-size: 24px;
     align-items: center;
-    transform : translate(60%, -450px);
-    color : white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  }
-
-* {
-    box-sizing: border-box;   
+    transform: translate(60%, -450px);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.col-md-6{
+* {
+    box-sizing: border-box;
+}
+
+.col-md-6 {
     width: 100%;
-    margin-left : 25%;
+    margin-left: 25%;
 }
 
 .col-md-6 h1 {
@@ -54,7 +56,8 @@ body, html {
     background-image: url('images/background\ img.gif');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%; /* Stretch to fill entire screen */
+    background-size: 100% 100%;
+    /* Stretch to fill entire screen */
     background-attachment: fixed;
     min-height: 100vh;
     width: 100%;
@@ -72,12 +75,38 @@ body, html {
     text-align: center;
 }
 
-.carousel-item {
-    text-align: center;
-}
-
 .carousel {
     position: relative;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 650px;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    transition: width 0.3s ease;
+    max-width: 650px;
+    max-height: 500px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
 }
 
 .carousel-control-prev,
@@ -118,27 +147,73 @@ body, html {
     text-align: center;
 }
 
+/* Cyberpunk Header Styling */
 header {
-    background-color: #48605C;
+    background: linear-gradient(135deg, #0a192f, #112240);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg, 
+        rgba(0, 255, 255, 0.1), 
+        rgba(0, 255, 255, 0.05)
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
+    position: relative;
+    z-index: 2;
+    padding: 15px 50px;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand img {
+    filter: brightness(1.2) contrast(1.3);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.5) contrast(1.5) drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
 }
 
 .header-button {
-    color: white !important;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    color: #00ffff !important;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.header-button::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ffff;
+    transition: width 0.3s ease;
 }
 
 .header-button:hover {
-    color: #f0f0f0 !important;
+    color: #00ff41 !important;
+}
+
+.header-button:hover::before {
+    width: 100%;
 }
 
 .footer {
@@ -173,17 +248,71 @@ header {
     color: #48605C;
 }
 
+/* Cyberpunk Footer Styling */
+.footer {
+    background: linear-gradient(135deg, #0a192f, #112240);
+    color: #00ffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 20px rgba(0, 255, 255, 0.2);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg, 
+        rgba(0, 255, 255, 0.1), 
+        rgba(0, 255, 255, 0.05)
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.footer h5 {
+    color: #00ffff !important;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer p {
+    color: #00ff41;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.footer-reserve-btn {
+    background-color: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.footer-reserve-btn:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ff41;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
 .about-me-images {
     position: relative;
     width: 50%;
     height: 80vh;
-    margin-left: -50px; /* Push the entire container more to the left */
+    margin-left: -50px;
+    /* Push the entire container more to the left */
 }
 
 .about-me-images .image-container {
     position: absolute;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 3px solid white;
     background-color: white;
     padding: 5px;
@@ -192,7 +321,7 @@ header {
 .about-me-images .image-container:hover {
     z-index: 10;
     transform: scale(1.05) rotate(0deg) !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .about-me-images img {
@@ -204,7 +333,280 @@ header {
 }
 
 body {
-  top: 0 !important;
+    top: 0 !important;
+}
+
+.mainproject-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.project-button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #00ffff;
+    /* Cyberpunk neon cyan */
+    background-color: transparent;
+    border: 3px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    width: 40%;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.4),
+        inset 0 0 10px rgba(0, 255, 255, 0.4);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.project-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(0, 255, 255, 0.2),
+            transparent);
+    transition: all 0.5s ease;
+    transform: skewX(-45deg);
+}
+
+.project-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(to right,
+            transparent,
+            #00ffff,
+            transparent);
+    transition: all 0.5s ease;
+}
+
+.project-button:hover {
+    color: #000;
+    background-color: #00ffff;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.4);
+    text-shadow: none;
+}
+
+.project-button:hover::before {
+    left: 100%;
+}
+
+.project-button:hover::after {
+    right: 100%;
+}
+
+.project-button:active {
+    transform: scale(0.95);
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.3),
+        inset 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.cyberpunk-border {
+    position: relative;
+    border: 3px solid #00ffff;
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.4),
+        inset 0 0 10px rgba(0, 255, 255, 0.4);
+    overflow: hidden;
+}
+
+.cyberpunk-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(0, 255, 255, 0.2),
+            transparent);
+    transition: all 0.5s ease;
+    transform: skewX(-45deg);
+    z-index: 1;
+}
+
+.cyberpunk-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    width: 200%;
+    height: 3px;
+    background: linear-gradient(to right,
+            transparent,
+            #00ffff,
+            transparent);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.cyberpunk-border:hover::before {
+    left: 100%;
+}
+
+.cyberpunk-border:hover::after {
+    right: 100%;
+}
+
+.cyberpunk-border:hover {
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.other-projects-container .responsive-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.other-projects-container .responsive-image:hover {
+    transform: scale(1.05);
+}
+
+.gamedev-container {
+    position: relative;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.9));
+    opacity: 0.9;
+    padding: 40px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.gamedev-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(10, 25, 47, 0.7), rgba(17, 34, 64, 0.7));
+    z-index: 1;
+    pointer-events: none;
+}
+
+#carouselGameDev {
+    position: relative;
+    z-index: 2;
+}
+
+#carouselGameDev .carousel-caption {
+    position: static;
+    background: rgba(10, 25, 47, 0.7);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#carouselGameDev .carousel-inner {
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 
+                0 0 60px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#carouselGameDev .carousel-item img {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+#carouselGameDev .carousel-item img:hover {
+    filter: brightness(1) contrast(1.3) saturate(1.2);
+    transform: scale(1.05);
+}
+
+#carouselGameDev .carousel-control-prev,
+#carouselGameDev .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+#carouselGameDev .carousel-control-prev:hover,
+#carouselGameDev .carousel-control-next:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+#carouselGameDev .carousel-control-prev-icon,
+#carouselGameDev .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1) brightness(2);
+}
+
+#carouselGameDev .carousel-indicators {
+    bottom: -30px;
+}
+
+#carouselGameDev .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#carouselGameDev .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 255, 255, 1);
+    opacity: 1;
+}
+
+.cyberpunk-caption {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cyberpunk-description {
+    font-family: 'Roboto Mono', monospace;
+    color: #00ff41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+    font-size: 0.9rem;
 }
 
 @font-face {
@@ -212,4 +614,137 @@ body {
     src: url('fonts/lemon_milk/LEMONMILK-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.current-project.project-button {
+    display: inline-block;
+    padding: 10px 30px;  
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    width: 60%;
+}
+
+.current-project.project-button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.latest-video.project-button {
+    display: inline-block;
+    padding: 10px 30px;  
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.latest-video.project-button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.websiteprojects-container {
+    position: relative;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.9));
+    opacity: 0.9;
+    padding: 40px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#carouselWebsiteProjects {
+    position: relative;
+    z-index: 2;
+}
+
+#carouselWebsiteProjects .carousel-caption {
+    position: static;
+    background: rgba(10, 25, 47, 0.7);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#carouselWebsiteProjects .carousel-inner {
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 
+                0 0 60px rgba(0, 255, 255, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#carouselWebsiteProjects .carousel-item img {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+#carouselWebsiteProjects .carousel-item img:hover {
+    filter: brightness(1) contrast(1.3) saturate(1.2);
+    transform: scale(1.05);
+}
+
+#carouselWebsiteProjects .carousel-control-prev,
+#carouselWebsiteProjects .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+#carouselWebsiteProjects .carousel-control-prev:hover,
+#carouselWebsiteProjects .carousel-control-next:hover {
+    background: rgba(0, 255, 255, 0.5);
+}
+
+#carouselWebsiteProjects .carousel-control-prev-icon,
+#carouselWebsiteProjects .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    filter: invert(1) brightness(2);
+}
+
+#carouselWebsiteProjects .carousel-indicators {
+    bottom: -30px;
+}
+
+#carouselWebsiteProjects .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+#carouselWebsiteProjects .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 255, 255, 1);
+    opacity: 1;
 }
