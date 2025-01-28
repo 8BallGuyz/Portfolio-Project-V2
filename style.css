@@ -217,39 +217,10 @@ header::before {
 }
 
 .footer {
-    background-color: #48605C;
-    color: white;
-    padding: 50px 0;
-}
-
-.footer h5 {
-    color: white;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.footer p {
-    margin-bottom: 10px;
-}
-
-.footer-reserve-btn {
-    background-color: white;
-    color: #48605C;
-    border: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.footer-reserve-btn:hover {
-    background-color: #f0f0f0;
-    color: #48605C;
-}
-
-/* Cyberpunk Footer Styling */
-.footer {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(135deg, #0a192f, #112240);
     color: #00ffff;
     position: relative;
@@ -273,11 +244,48 @@ header::before {
     pointer-events: none;
 }
 
+.footer .container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.footer .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .col-md-4:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
 .footer h5 {
-    color: #00ffff !important;
-    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .footer p {
@@ -299,6 +307,54 @@ header::before {
     color: #00ff41;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer .social-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-icon img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%) brightness(200%) contrast(200%);
+    transition: all 0.3s ease;
+}
+
+.footer .social-icon:hover img {
+    filter: grayscale(0%) brightness(100%) contrast(100%);
+    transform: scale(1.2);
+}
+
+.footer-contact-link {
+    color: #00ffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-link:hover {
+    color: #ff00ff;
+    text-decoration: underline;
+}
+
+.footer .footer-logo {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .footer-logo p {
+    margin-top: 10px;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .about-me-images {
@@ -497,7 +553,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.9));
     opacity: 0.9;
-    padding: 40px 0;
+    padding: 30px 0;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -537,9 +593,8 @@ body {
 }
 
 #carouselGameDev .carousel-item img {
-    width: 100%;
-    max-width: 800px;
-    height: 500px;
+    width: 550px;
+    height: 450px;
     object-fit: cover;
     transition: all 0.5s ease;
 }
@@ -666,7 +721,7 @@ body {
     position: relative;
     background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(17, 34, 64, 0.9));
     opacity: 0.9;
-    padding: 40px 0;
+    padding: 30px 0;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -695,8 +750,8 @@ body {
 
 #carouselWebsiteProjects .carousel-item img {
     width: 100%;
-    max-width: 800px;
-    height: 500px;
+    max-width: 700px;
+    height: 450px;
     object-fit: cover;
     transition: all 0.5s ease;
 }
