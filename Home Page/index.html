@@ -11,6 +11,46 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="fonts.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    .flip-card {
+      background-color: transparent;
+      width: 200px;
+      height: 200px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    .flip-card-back {
+      background-color: #333;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
 
 <body>
@@ -52,34 +92,40 @@
             <div class="about-me-images">
               <div class="image-container"
                 style="top: 0; left: -250px; width: 250px; height: 300px; transform: rotate(-5deg);">
-                <img src="../images/pic1.png" alt="About Me Image 1">
+                <img src="../images/me1.jpg" alt="About Me Image 1">
               </div>
               <div class="image-container"
                 style="top: 0px; left: 25px; width: 300px; height: 250px; transform: rotate(7deg);">
-                <img src="../images/pic2.png" alt="About Me Image 2">
+                <img src="../images/me2.jpg" alt="About Me Image 2">
               </div>
               <div class="image-container"
                 style="top: 150px; left: -50px; width: 200px; height: 200px; transform: rotate(-3deg);">
-                <img src="../images/pic3.png" alt="About Me Image 3">
+                <img src="../images/me3.png" alt="About Me Image 3">
               </div>
               <div class="image-container"
                 style="top: 320px; left: -230px; width: 280px; height: 350px; transform: rotate(4deg);">
-                <img src="../images/pic4.png" alt="About Me Image 4">
+                <img src="../images/me4.jpg" alt="About Me Image 4">
               </div>
               <div class="image-container"
                 style="top: 150px; left: 180px; width: 220px; height: 280px; transform: rotate(-6deg);">
-                <img src="../images/pic5.png" alt="About Me Image 5">
+                <img src="../images/me5.jpg" alt="About Me Image 5">
               </div>
               <div class="image-container"
                 style="top: 380px; left: 30px; width: 270px; height: 230px; transform: rotate(5deg);">
-                <img src="../images/pic6.png" alt="About Me Image 6">
+                <img src="../images/me6.jpg" alt="About Me Image 6">
               </div>
             </div>
           </div>
           <div class="col-md-6 about-me-paragraph">
             <p class="aboutme-p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Nulla facilisi. <br>Nulla
-              facilisi.
+              JE SURF SUR LE DEV ! 🏄‍♂️ <br>
+
+Actuellement Étudiant en BUT MMI à<br>
+ l'IUT Bordeaux Montaigne, je suis passionné par <br>
+ la programmation et le pixel art. Je me <br>
+ spécialise en Unity et Aseprite pour créer des expériences interactives. Ainsi, Mon objectif est <br>
+ de travailler en tant que développeur de jeux,<br>
+  que ce soit en équipe ou en indépendant.
             </p>
           </div>
           <br>
@@ -115,7 +161,7 @@
                 </div>
                 <div class="text-center">
                   <a href="../Current Project/currentProject.html" target="_blank">
-                    <img src="../images/pic1.png" width="" height="450" class="cyberpunk-border">
+                    <img src="../images/questionmark.png" width="650" height="450" class="cyberpunk-border">
                     <p class="current-project project-button">> Current Project</p>
                   </a>
                 </div>
@@ -263,48 +309,84 @@
         <div class="container other-projects-container">
           <div class="row justify-content-center">
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic7.png" class="d-block responsive-image" alt="Other Project 1">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/asprite.png" class="d-block responsive-image" alt="Other Project 1">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Pixel Art</h3>
+                    <p>Aseprite</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic8.png" class="d-block responsive-image" alt="Other Project 2">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/lightroom.png" class="d-block responsive-image" alt="Other Project 2">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Photography</h3>
+                    <p>Lightroom Classic , Photoshop</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic9.png" class="d-block responsive-image" alt="Other Project 3">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/illustrator.png" class="d-block responsive-image" alt="Other Project 3">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Graphic Design</h3>
+                    <p>Illustrator</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row justify-content-center mt-4">
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic7.png" class="d-block responsive-image" alt="Other Project 4">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/aftereffects.png" class="d-block responsive-image" alt="Other Project 4">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Motion Design & VFX</h3>
+                    <p>After Effects</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic8.png" class="d-block responsive-image" alt="Other Project 5">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/premierpro.png" class="d-block responsive-image" alt="Other Project 5">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Video Editing</h3>
+                    <p>Premier Pro</p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-md-3">
-              <label for="img1" class="form">
-                <a href="https://www.google.fr/" target="_blank">
-                  <img src="../images/pic9.png" class="d-block responsive-image" alt="Other Project 6">
-                </a>
-              </label>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img src="../images/pic9.png" class="d-block responsive-image" alt="Other Project 6">
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Bonus Project</h3>
+                    <p>Coming Soon</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

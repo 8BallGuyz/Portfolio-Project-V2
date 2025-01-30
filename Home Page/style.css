@@ -869,3 +869,93 @@ body {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
 }
+
+.other-projects-container .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.other-projects-container .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.other-projects-container .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.other-projects-container .flip-card-front,
+.other-projects-container .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.other-projects-container .flip-card-front {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.other-projects-container .flip-card-front img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.other-projects-container .flip-card-back {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #00ffff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00ffff;
+    padding: 15px;
+}
+
+.other-projects-container .flip-card-back h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.other-projects-container .flip-card-back p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+    align-items: center;
+    border: 2px solid #00ffff;
+    padding: 15px;
+}
+
+.other-projects-container .flip-card-back h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.other-projects-container .flip-card-back p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
