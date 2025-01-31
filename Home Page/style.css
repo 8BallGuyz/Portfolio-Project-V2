@@ -7,35 +7,96 @@ html {
     box-sizing: border-box;
 }
 
-/* LEON CARTER TITLE */
-.leoncarter-text {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 5rem;
-    /* Very large text */
-    color: #000000;
+/* CYBERPUNK TITLE STYLES */
+.leoncarter-text, 
+.aboutme-text, 
+.projetprincipal-text, 
+.footer .small-text {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff; /* Neon cyan */
     text-transform: uppercase;
     letter-spacing: 3px;
-    line-height: 1;
-    margin-bottom: 20px;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.7),
+        0 0 20px rgba(0, 255, 255, 0.5);
+    position: relative;
+    text-align: center;
 }
 
-/* LEON CARTER TITLE */
+.leoncarter-text {
+    font-size: 5rem;
+    animation: glitch-title 2s infinite linear alternate;
+}
+
 .aboutme-text {
-    font-family: 'Lemon Milk', sans-serif;
     font-size: 3rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-/* LEON CARTER TITLE */
+.projetprincipal-text {
+    font-size: 2.5rem;
+}
+
+.footer .small-text {
+    font-size: 1.5rem;
+}
+
+@keyframes glitch-title {
+    0% {
+        text-shadow: 
+            0.05em 0 0 rgba(255, 0, 0, 0.75),
+            -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+            0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+        text-shadow: 
+            0.05em 0 0 rgba(255, 0, 0, 0.75),
+            -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+            0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+        text-shadow: 
+            -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+        text-shadow: 
+            -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+            0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+            -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+        text-shadow: 
+            0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+            0.05em 0 0 rgba(0, 255, 0, 0.75),
+            0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+        text-shadow: 
+            0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+            0.05em 0 0 rgba(0, 255, 0, 0.75),
+            0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+        text-shadow: 
+            -0.025em 0 0 rgba(255, 0, 0, 0.75),
+            -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+            -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}
+
+/* CYBERPUNK ABOUT ME PARAGRAPH */
 .about-me-paragraph {
-    font-family: 'Lemon Milk', cursive;
-    font-size: 24px;
-    align-items: center;
-    transform: translate(60%, -450px);
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    color: #00ffff; /* Neon cyan */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-left: 3px solid #00ffff;
+    transform: translate(50%, -450px);
+    text-shadow: 
+        0 0 5px rgba(0, 255, 255, 0.5);
+    line-height: 1.6;
 }
 
 * {
@@ -77,6 +138,15 @@ html {
 
 .carousel {
     position: relative;
+    perspective: none;
+    transform-style: flat;
+    max-width: 800px; /* Adjust this value as needed */
+    margin: 0 auto;
+}
+
+.carousel img {
+    max-height: 500px; /* Optional: limit image height */
+    object-fit: cover;
 }
 
 .carousel-item {
@@ -84,24 +154,35 @@ html {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    transition: none !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.01s;
 }
 
 .carousel-item img {
-    width: 650px;
+    width: 100%;
     height: 500px;
     object-fit: cover;
     object-position: center;
     margin: 0 auto;
-    transition: width 0.3s ease;
-    max-width: 650px;
-    max-height: 500px;
+    transition: none !important;
+}
+
+.carousel-item.active {
+    position: relative;
+    opacity: 1;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: none !important;
 }
 
 .carousel-control-prev:hover,
@@ -121,6 +202,16 @@ html {
     height: auto;
 }
 
+.carousel-caption {
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#carouselWebsiteProjects .carousel-caption {
+    display: block !important;
+}
+
 .reserver-btn {
     display: block;
     width: fit-content;
@@ -137,17 +228,7 @@ html {
     width: 100%;
 }
 
-.projetprincipal-text {
-    font-family: 'Lemon Milk', sans-serif;
-    font-size: 3rem;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    align-items: center;
-    text-align: center;
-}
-
-/* Cyberpunk Header Styling */
+/* CYBERPUNK HEADER STYLING */
 header {
     background: linear-gradient(135deg, #0a192f, #112240);
     position: relative;
@@ -249,11 +330,6 @@ header::before {
     background-color: #00ffff;
     margin: 20px 0;
     opacity: 0.5;
-}
-
-.footer .small-text {
-    font-size: 0.8rem;
-    opacity: 0.7;
 }
 
 .footer {
@@ -636,19 +712,12 @@ body {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 
                 0 0 60px rgba(0, 255, 255, 0.2);
     overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 #carouselGameDev .carousel-item img {
     width: 550px;
     height: 450px;
     object-fit: cover;
-    transition: all 0.5s ease;
-}
-
-#carouselGameDev .carousel-item img:hover {
-    filter: brightness(1) contrast(1.3) saturate(1.2);
-    transform: scale(1.05);
 }
 
 #carouselGameDev .carousel-control-prev,
@@ -659,7 +728,6 @@ body {
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.3s ease;
 }
 
 #carouselGameDev .carousel-control-prev:hover,
@@ -684,7 +752,6 @@ body {
     background-color: rgba(0, 255, 255, 0.5);
     border-radius: 50%;
     opacity: 0.5;
-    transition: all 0.3s ease;
 }
 
 #carouselGameDev .carousel-indicators .active {
@@ -792,7 +859,6 @@ body {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 
                 0 0 60px rgba(0, 255, 255, 0.2);
     overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 #carouselWebsiteProjects .carousel-item img {
@@ -800,12 +866,6 @@ body {
     max-width: 700px;
     height: 450px;
     object-fit: cover;
-    transition: all 0.5s ease;
-}
-
-#carouselWebsiteProjects .carousel-item img:hover {
-    filter: brightness(1) contrast(1.3) saturate(1.2);
-    transform: scale(1.05);
 }
 
 #carouselWebsiteProjects .carousel-control-prev,
@@ -816,7 +876,6 @@ body {
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-    transition: all 0.3s ease;
 }
 
 #carouselWebsiteProjects .carousel-control-prev:hover,
@@ -841,7 +900,6 @@ body {
     background-color: rgba(0, 255, 255, 0.5);
     border-radius: 50%;
     opacity: 0.5;
-    transition: all 0.3s ease;
 }
 
 #carouselWebsiteProjects .carousel-indicators .active {
@@ -941,21 +999,509 @@ body {
     font-size: 0.9rem;
     opacity: 0.8;
 }
-    align-items: center;
+
+.aboutme-p {
+    position: relative;
+    background: rgba(0, 0, 0, 0.7);
     border: 2px solid #00ffff;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 15px rgba(0, 255, 255, 0.3);
+    text-shadow: 
+        0 0 5px #00ffff,
+        0 0 10px rgba(0, 255, 255, 0.7);
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+.aboutme-p::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.05) 0,
+        rgba(0, 255, 255, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    animation: glitch-lines 5s infinite linear;
+    pointer-events: none;
+}
+
+.aboutme-p .highlight {
+    color: #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+@keyframes glitch-lines {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(2px, -2px);
+    }
+    75% {
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.name {
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff;
+  letter-spacing: 3px;
+  transition: all 0.3s ease;
+}
+
+.name::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right, 
+    #00ffff, 
+    #ff00ff
+  );
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.name:hover {
+  text-shadow: 
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+}
+
+.name:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.about-me-title {
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  color: #ff00ff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 
+    0 0 5px #ff00ff,
+    0 0 10px #ff00ff;
+  transition: all 0.3s ease;
+}
+
+.about-me-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right, 
+    #ff00ff, 
+    #00ffff
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.about-me-title:hover {
+  text-shadow: 
+    0 0 10px #ff00ff,
+    0 0 20px #ff00ff,
+    0 0 30px #ff00ff;
+}
+
+.about-me-title:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+/* CYBERPUNK GAME DEV AND WEBSITE PROJECTS CONTAINERS */
+.gamedev-container,
+.websiteprojects-container {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(16, 16, 32, 0.9));
+    border: 2px solid #00ffff;
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        0 0 20px rgba(0, 255, 255, 0.2),
+        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CYBERPUNK CAROUSEL STYLING */
+#carouselGameDev,
+#carouselWebsiteProjects {
+    perspective: 1000px;
+}
+
+#carouselGameDev .carousel-inner,
+#carouselWebsiteProjects .carousel-inner {
+    overflow: visible;
+    transform-style: flat;
+}
+
+#carouselGameDev .carousel-item,
+#carouselWebsiteProjects .carousel-item {
+    opacity: 0.5;
+    transform: none;
+    pointer-events: none;
+}
+
+#carouselGameDev .carousel-item.active,
+#carouselWebsiteProjects .carousel-item.active {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+#carouselGameDev .carousel-item.next,
+#carouselGameDev .carousel-item.prev,
+#carouselWebsiteProjects .carousel-item.next,
+#carouselWebsiteProjects .carousel-item.prev {
+    opacity: 0.7;
+    transform: none;
+}
+
+/* CYBERPUNK CAROUSEL CONTROLS - POSITIONING FIX */
+#carouselGameDev .carousel-control-prev,
+#carouselWebsiteProjects .carousel-control-prev {
+    left: -60px; /* Move prev arrow outside */
+}
+
+#carouselGameDev .carousel-control-next,
+#carouselWebsiteProjects .carousel-control-next {
+    right: -60px; /* Move next arrow outside */
+}
+
+/* CYBERPUNK CAROUSEL CAPTION */
+#carouselGameDev .carousel-caption,
+#carouselWebsiteProjects .carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-left: 3px solid #00ffff;
     padding: 15px;
 }
 
-.other-projects-container .flip-card-back h3 {
-    font-family: 'Orbitron', sans-serif;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+#carouselGameDev .carousel-caption .cyberpunk-caption,
+#carouselWebsiteProjects .carousel-caption .cyberpunk-caption {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-.other-projects-container .flip-card-back p {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
+#carouselGameDev .carousel-caption .cyberpunk-description,
+#carouselWebsiteProjects .carousel-caption .cyberpunk-description {
+    color: #00ffff;
     opacity: 0.8;
+}
+
+/* CYBERPUNK CAROUSEL CONTROLS - ENHANCED */
+#carouselGameDev .carousel-control-prev,
+#carouselGameDev .carousel-control-next,
+#carouselWebsiteProjects .carousel-control-prev,
+#carouselWebsiteProjects .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid rgba(0, 255, 255, 0.5);
+    box-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.3),
+        inset 0 0 15px rgba(0, 255, 255, 0.2);
+    opacity: 0.8;
+}
+
+#carouselGameDev .carousel-control-prev:hover,
+#carouselGameDev .carousel-control-next:hover,
+#carouselWebsiteProjects .carousel-control-prev:hover,
+#carouselWebsiteProjects .carousel-control-next:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.4), rgba(0, 255, 255, 0.2));
+    border-color: #00ffff;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 25px rgba(0, 255, 255, 0.3);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#carouselGameDev .carousel-control-prev-icon,
+#carouselGameDev .carousel-control-next-icon,
+#carouselWebsiteProjects .carousel-control-prev-icon,
+#carouselWebsiteProjects .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    background-size: 100%, 100%;
+    background-image: linear-gradient(
+        45deg, 
+        rgba(0, 255, 255, 0.7) 0%, 
+        rgba(0, 255, 255, 0.5) 50%, 
+        rgba(0, 255, 255, 0.3) 100%
+    );
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+}
+
+#carouselGameDev .carousel-control-prev-icon:hover,
+#carouselGameDev .carousel-control-next-icon:hover,
+#carouselWebsiteProjects .carousel-control-prev-icon:hover,
+#carouselWebsiteProjects .carousel-control-next-icon:hover {
+    transform: scale(1.2);
+    background-image: linear-gradient(
+        45deg, 
+        rgba(0, 255, 255, 1) 0%, 
+        rgba(0, 255, 255, 0.8) 50%, 
+        rgba(0, 255, 255, 0.6) 100%
+    );
+}
+
+/* CYBERPUNK CAROUSEL INDICATORS */
+#carouselGameDev .carousel-indicators,
+#carouselWebsiteProjects .carousel-indicators {
+    bottom: -30px;
+}
+
+#carouselGameDev .carousel-indicators button,
+#carouselWebsiteProjects .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+#carouselGameDev .carousel-indicators .active,
+#carouselWebsiteProjects .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    background-color: #00ffff;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+/* SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* CYBERPUNK HEADER NAVIGATION STYLING */
+.navbar-nav .header-button {
+    color: #00ffff; /* Neon cyan */
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-nav .header-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ffff;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .header-button:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+.navbar-nav .header-button:hover::before {
+    width: 100%;
+}
+
+/* CYBERPUNK CAROUSEL DESIGN */
+.cyberpunk-carousel {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 1500px;
+    overflow: visible;
+}
+
+.cyberpunk-carousel .carousel-inner {
+    border-radius: 15px;
+    overflow: visible;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.3),
+        0 0 40px rgba(0, 255, 255, 0.2);
+}
+
+.cyberpunk-carousel .carousel-item-wrapper {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cyberpunk-carousel .carousel-item {
+    opacity: 0.5;
+    transform: none;
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cyberpunk-carousel .carousel-item.active {
+    opacity: 1;
+    transform: none;
+    z-index: 10;
+}
+
+.cyberpunk-carousel .cyberpunk-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid #00ffff;
+}
+
+.cyberpunk-carousel .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    padding: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.cyberpunk-carousel .caption-content {
+    text-align: left;
+}
+
+.cyberpunk-carousel .project-title {
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+.cyberpunk-carousel .project-description {
+    color: #00ffff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.cyberpunk-carousel .project-details {
+    display: flex;
+    gap: 10px;
+}
+
+.cyberpunk-carousel .detail-tag {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+}
+
+/* CAROUSEL CONTROLS */
+.cyberpunk-carousel .carousel-control-prev,
+.cyberpunk-carousel .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+}
+
+.cyberpunk-carousel .carousel-control-prev-icon,
+.cyberpunk-carousel .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    background-image: none;
+    position: relative;
+}
+
+.cyberpunk-carousel .carousel-control-prev-icon::before,
+.cyberpunk-carousel .carousel-control-next-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #00ffff;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cyberpunk-carousel .carousel-control-prev-icon::after,
+.cyberpunk-carousel .carousel-control-next-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: #00ffff;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* CAROUSEL INDICATORS */
+.cyberpunk-carousel .carousel-indicators {
+    bottom: -40px;
+}
+
+.cyberpunk-carousel .cyberpunk-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 255, 0.3);
+    opacity: 0.5;
+}
+
+.cyberpunk-carousel .cyberpunk-indicator.active {
+    width: 15px;
+    height: 15px;
+    background-color: #00ffff;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
 }

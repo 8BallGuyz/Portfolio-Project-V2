@@ -1,0 +1,74 @@
+body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+}
+
+.sound-project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-overview {
+    background-color: rgba(35, 35, 55, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.audio-features {
+    list-style-type: none;
+    padding: 0;
+}
+
+.audio-features li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.audio-features i {
+    margin-right: 1rem;
+    color: #16c79a;
+    font-size: 1.5rem;
+}
+
+.technical-details .card {
+    background-color: rgba(40, 40, 70, 0.8);
+    border: none;
+    margin-bottom: 1rem;
+    color: #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.technical-details .card:hover {
+    transform: scale(1.05);
+}
+
+.technical-details .card-title {
+    color: #16c79a;
+}
+
+.project-cta {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #16c79a;
+    border-color: #16c79a;
+    color: #1a1a2e;
+}
+
+.btn-primary:hover {
+    background-color: #0fa086;
+    border-color: #0fa086;
+}

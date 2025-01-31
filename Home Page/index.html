@@ -11,6 +11,8 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="fonts.css">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     .flip-card {
       background-color: transparent;
@@ -62,11 +64,11 @@
           <img src="../images/LC LABS Logo.png" alt="Logo LC LABS" width="90">
         </div>
         <div class="navbar-nav ms-auto">
-          <a class="nav-link header-button" href="#">About Me | </a>
-          <a class="nav-link header-button" href="#">Projet Principale | </a>
-          <a class="nav-link header-button" href="#">Dev de Jeu | </a>
-          <a class="nav-link header-button" href="#">Dev de Site Web | </a>
-          <a class="nav-link header-button" href="#">Autres Projets | </a>
+          <a class="nav-link header-button" href="#about-me-section">About Me | </a>
+          <a class="nav-link header-button" href="#main-project-section">Projet Principale | </a>
+          <a class="nav-link header-button" href="#game-dev-section">Dev de Jeu | </a>
+          <a class="nav-link header-button" href="#website-projects-section">Dev de Site Web | </a>
+          <a class="nav-link header-button" href="#other-projects-section">Autres Projets | </a>
         </div>
       </div>
     </nav>
@@ -75,7 +77,7 @@
   <!--BODY-->
   <main>
     <div class="main"
-      style="background-image: url('../images/background\ img.gif'); background-attachment: fixed; background-size: cover;">
+      style="background-image: url('../images/background2.gif'); background-attachment: fixed; background-size: cover;">
       <div class="main-content">
         <div class="row">
           <div class="col-md-6">
@@ -117,17 +119,19 @@
             </div>
           </div>
           <div class="col-md-6 about-me-paragraph">
-            <p class="aboutme-p">
-              JE SURF SUR LE DEV ! 🏄‍♂️ <br>
-
-Actuellement Étudiant en BUT MMI à<br>
- l'IUT Bordeaux Montaigne, je suis passionné par <br>
- la programmation et le pixel art. Je me <br>
- spécialise en Unity et Aseprite pour créer des expériences interactives. Ainsi, Mon objectif est <br>
- de travailler en tant que développeur de jeux,<br>
-  que ce soit en équipe ou en indépendant.
+            <p class="aboutme-p" data-cyberpunk="true">
+              <span class="highlight" data-glitch="JE SURF SUR LE DEV ! ">
+                JE SURF SUR LE DEV ! 
+              </span>
+              <br><br>
+              Actuellement étudiant en <span data-tech="true">BUT MMI</span> à l'<span data-location="true">IUT Bordeaux Montaigne</span>, 
+              je suis passionné par la <span data-skill="true">programmation</span> et le <span data-skill="true">pixel art</span>. 
+              Je me spécialise en <span data-tool="true">Unity</span> et <span data-tool="true">Aseprite</span> pour créer des expériences interactives. 
+              Mon objectif est de travailler en tant que <span data-role="true">développeur de jeux</span>, 
+              que ce soit en équipe ou en indépendant.
             </p>
           </div>
+          <br>
           <br>
           <br>
           <br>
@@ -147,7 +151,7 @@ Actuellement Étudiant en BUT MMI à<br>
           <br>
         </div>
 
-        <div class="mainproject-container">
+        <div id="main-project-section" class="mainproject-container">
           <div class="row justify-content-center">
             <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
               <div class="d-flex align-items-center justify-content-center">
@@ -181,38 +185,41 @@ Actuellement Étudiant en BUT MMI à<br>
         <br>
         <br>
 
-        <div class="gamedev-container">
+        <div id="game-dev-section" class="gamedev-container">
           <div class="row justify-content-center">
             <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
               <div id="carouselGameDev" class="carousel carousel-dark slide">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselGameDev" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Game Development Project 1"></button>
+                    aria-current="true" aria-label="Game Project 1"></button>
                   <button type="button" data-bs-target="#carouselGameDev" data-bs-slide-to="1"
-                    aria-label="Game Development Project 2"></button>
+                    aria-label="Game Project 2"></button>
                   <button type="button" data-bs-target="#carouselGameDev" data-bs-slide-to="2"
-                    aria-label="Game Development Project 3"></button>
+                    aria-label="Game Project 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner shadow-lg rounded">
                   <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../images/pic1.png" class="d-block w-100 responsive-image" alt="Game Development Project 1" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">ARENO</h5>
-                      <p class="cyberpunk-description">A Cyberpunk Arena Fighting Game</p>
+                    <img src="../images/pic4.png" class="d-block w-100 img-fluid" alt="Website Project 1">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Digital Marketplace</h5>
+                      <p class="text-white-50"><i class="fas fa-shopping-cart me-2"></i>AI-powered e-commerce platform with personalized shopping experience</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-rocket me-2"></i>Launch Site</a>
                     </div>
                   </div>
                   <div class="carousel-item" data-bs-interval="2000">
-                    <img src="../images/pic2.png" class="d-block w-100 responsive-image" alt="Game Development Project 2" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">NEON HORIZON: DIGITAL FRONTIER</h5>
-                      <p class="cyberpunk-description">Procedural narrative | Augmented reality gameplay</p>
+                    <img src="../images/pic5.png" class="d-block w-100 img-fluid" alt="Website Project 2">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Interactive Portfolio</h5>
+                      <p class="text-white-50"><i class="fas fa-laptop-code me-2"></i>Dynamic personal showcase with animated skill visualizations</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-eye me-2"></i>View Details</a>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="../images/pic3.png" class="d-block w-100 responsive-image" alt="Game Development Project 3" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">CIRCUIT BREAKER: SYSTEM OVERRIDE</h5>
-                      <p class="cyberpunk-description">Hyper-realistic graphics | Quantum computing mechanics</p>
+                    <img src="../images/pic6.png" class="d-block w-100 img-fluid" alt="Website Project 3">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Content Nexus</h5>
+                      <p class="text-white-50"><i class="fas fa-blog me-2"></i>Headless CMS with real-time collaborative editing features</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-link me-2"></i>Explore Platform</a>
                     </div>
                   </div>
                 </div>
@@ -243,7 +250,7 @@ Actuellement Étudiant en BUT MMI à<br>
         <br>
         <br>
 
-        <div class="websiteprojects-container">
+        <div id="website-projects-section" class="websiteprojects-container">
           <div class="row justify-content-center">
             <div class="col-md-12 d-flex justify-content-center align-items-center flex-column">
               <div id="carouselWebsiteProjects" class="carousel carousel-dark slide">
@@ -255,26 +262,29 @@ Actuellement Étudiant en BUT MMI à<br>
                   <button type="button" data-bs-target="#carouselWebsiteProjects" data-bs-slide-to="2"
                     aria-label="Website Project 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner shadow-lg rounded">
                   <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="../images/pic4.png" class="d-block w-100 responsive-image" alt="Website Project 1" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">SITE WEB DU MUSEE</h5>
-                      <p class="cyberpunk-description">Projet Universitaire</p>
+                    <img src="../images/pic4.png" class="d-block w-100 img-fluid" alt="Website Project 1">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Digital Marketplace</h5>
+                      <p class="text-white-50"><i class="fas fa-shopping-cart me-2"></i>AI-powered e-commerce platform with personalized shopping experience</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-rocket me-2"></i>Launch Site</a>
                     </div>
                   </div>
                   <div class="carousel-item" data-bs-interval="2000">
-                    <img src="../images/pic5.png" class="d-block w-100 responsive-image" alt="Website Project 2" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">DIGITAL INTERFACE TOOLKIT</h5>
-                      <p class="cyberpunk-description">Interactive UI | Cutting-edge frontend frameworks</p>
+                    <img src="../images/pic5.png" class="d-block w-100 img-fluid" alt="Website Project 2">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Interactive Portfolio</h5>
+                      <p class="text-white-50"><i class="fas fa-laptop-code me-2"></i>Dynamic personal showcase with animated skill visualizations</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-eye me-2"></i>View Details</a>
                     </div>
                   </div>
                   <div class="carousel-item">
-                    <img src="../images/pic6.png" class="d-block w-100 responsive-image" alt="Website Project 3" width="500" height="500">
-                    <div class="carousel-caption d-block">
-                      <h5 class="cyberpunk-caption">NETWORK PULSE DASHBOARD</h5>
-                      <p class="cyberpunk-description">Real-time data visualization | Responsive design</p>
+                    <img src="../images/pic6.png" class="d-block w-100 img-fluid" alt="Website Project 3">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                      <h5 class="text-white">Content Nexus</h5>
+                      <p class="text-white-50"><i class="fas fa-blog me-2"></i>Headless CMS with real-time collaborative editing features</p>
+                      <a href="#" class="btn btn-outline-light btn-sm"><i class="fas fa-link me-2"></i>Explore Platform</a>
                     </div>
                   </div>
                 </div>
@@ -306,7 +316,7 @@ Actuellement Étudiant en BUT MMI à<br>
           <br>
           
 
-        <div class="container other-projects-container">
+        <div id="other-projects-section" class="container other-projects-container">
           <div class="row justify-content-center">
             <div class="col-md-3">
               <div class="flip-card">

@@ -1,0 +1,312 @@
+:root {
+    --neon-blue: #00f0ff;
+    --neon-pink: #ff00bf;
+    --neon-green: #00ff9f;
+    --dark-background: #0a0a1a;
+    --accent-background: #111127;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--dark-background);
+    color: white;
+    line-height: 1.6;
+}
+
+.cyberpunk-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: var(--accent-background);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 4px 6px rgba(0, 240, 255, 0.2);
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--neon-pink);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--neon-green);
+}
+
+/* Gallery Sections */
+.gallery-section {
+    margin-top: 40px;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: var(--neon-green);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--neon-blue);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(20%) brightness(80%);
+    transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+    filter: grayscale(0%) brightness(100%);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover .item-overlay {
+    height: 50px;
+}
+
+.item-overlay p {
+    color: white;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Carousel Specific Styles */
+.cyberpunk-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.carousel-track {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateX(100%);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+.carousel-slide:nth-child(1) {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.carousel-content {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border: 3px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.carousel-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.2);
+    transition: filter 0.3s ease;
+}
+
+.carousel-content:hover img {
+    filter: brightness(1) contrast(1.1);
+}
+
+.carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    padding: 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.carousel-content:hover .carousel-overlay {
+    transform: translateY(0);
+}
+
+.carousel-overlay h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-pink);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.carousel-overlay p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--neon-green);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.carousel-prev,
+.carousel-next {
+    background: rgba(0, 240, 255, 0.2);
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 10px 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: var(--neon-blue);
+    color: var(--dark-background);
+    opacity: 1;
+}
+
+/* Glitch Effect */
+@keyframes glitch-anim {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    5% {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    }
+    10% {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    15% {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    }
+    20% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.carousel-content:hover img {
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--accent-background);
+    margin-top: 40px;
+    color: var(--neon-pink);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
